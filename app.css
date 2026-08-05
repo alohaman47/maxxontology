@@ -33,7 +33,7 @@ body{
   -webkit-font-smoothing:antialiased;
   padding-bottom:env(safe-area-inset-bottom);
 }
-button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+button{font:inherit;color:inherit;background:transparent;border:0;padding:0;cursor:pointer;appearance:none;-webkit-appearance:none}
 a{color:inherit;text-decoration:none}
 ::selection{background:var(--ink);color:var(--paper)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
@@ -72,14 +72,19 @@ a{color:inherit;text-decoration:none}
 /* ---------- rows (the workhorse) ---------- */
 .rows{display:block}
 .row{
-  display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:baseline;
+  display:grid;
+  grid-template-columns:1fr auto;
+  grid-template-rows:auto auto;
+  gap:4px 16px;
+  align-items:baseline;
   width:100%;text-align:left;padding:15px 0;border-bottom:1px solid var(--line);
+  background:transparent;
 }
 .row:hover{background:linear-gradient(90deg,var(--paper-2),transparent 70%)}
-.row .name{font-size:16px;font-weight:600;letter-spacing:-.01em}
-.row .sub{grid-column:1;color:var(--muted);font-size:12.5px}
-.row .val{font-family:var(--num);font-size:15px;text-align:right;font-variant-numeric:tabular-nums}
-.row .val-sub{grid-column:2;text-align:right;color:var(--muted);font-size:12px;font-family:var(--num)}
+.row .name{grid-column:1;grid-row:1;font-size:16px;font-weight:600;letter-spacing:-.01em}
+.row .val{grid-column:2;grid-row:1;font-family:var(--num);font-size:15px;text-align:right;font-variant-numeric:tabular-nums}
+.row .sub{grid-column:1;grid-row:2;color:var(--muted);font-size:12.5px}
+.row .val-sub{grid-column:2;grid-row:2;text-align:right;color:var(--muted);font-size:12px;font-family:var(--num)}
 .up{color:var(--up)}.dn{color:var(--down)}.mute{color:var(--muted)}
 .num{font-family:var(--num);font-variant-numeric:tabular-nums}
 
@@ -136,6 +141,7 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- sheet (detail) ---------- */
 .sheet{position:fixed;inset:0;z-index:50;display:flex;align-items:flex-end;justify-content:center}
+.sheet[hidden]{display:none !important}
 .sheet-scrim{position:absolute;inset:0;background:color-mix(in srgb,var(--ink) 34%,transparent)}
 .sheet-body{
   position:relative;width:100%;max-width:640px;max-height:90vh;overflow-y:auto;
