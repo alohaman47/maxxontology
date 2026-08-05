@@ -293,7 +293,7 @@ function closeSheet(){
 
 const syntheticNote = () => `<div class="note" style="margin:0 0 26px">
   <b>ข้อมูลสังเคราะห์</b> — ราคา งบ กระแสโซเชียล ปั้นขึ้นเพื่อทดสอบตรรกะ ห้ามใช้ตัดสินใจลงทุน
-  ต่อของจริงที่ <code>src/adapter.js</code> แล้วตั้ง <code>synthetic:false</code></div>`;
+  ต่อของจริงที่ <code>adapter.js</code> แล้วตั้ง <code>synthetic:false</code></div>`;
 
 /* ---------------- events ---------------- */
 function wire(){
