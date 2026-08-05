@@ -22,18 +22,18 @@ export const PORTFOLIO = {
    tv = มูลค่าต่อ 1 point ต่อ 1 lot  ← ต้องดึงจาก SYMBOL_TRADE_TICK_VALUE จริง
 ------------------------------------------------------------- */
 const TRADABLES = [
-  {id:'XAUUSD',klass:'Metal',cluster:'METALS',bid:3318.55,point:0.01,digits:2,tv:1.00,spreadPt:11,
-   atrM15:2.40,atrD1:31.2,atrPct:63,adx:28,slope:0.39,ret1d:0.62},
-  {id:'NAS100',klass:'Index',cluster:'US_EQ',bid:20486.2,point:0.1,digits:1,tv:0.10,spreadPt:10,
-   atrM15:19.0,atrD1:242,atrPct:81,adx:33,slope:0.62,ret1d:0.94},
-  {id:'US30',klass:'Index',cluster:'US_EQ',bid:41182.6,point:0.1,digits:1,tv:0.10,spreadPt:20,
-   atrM15:31.5,atrD1:388,atrPct:58,adx:26,slope:0.34,ret1d:0.41},
-  {id:'SPX500',klass:'Index',cluster:'US_EQ',bid:5731.85,point:0.1,digits:2,tv:0.10,spreadPt:4,
-   atrM15:4.10,atrD1:52.4,atrPct:66,adx:29,slope:0.44,ret1d:0.58},
-  {id:'US2000',klass:'Index',cluster:'US_EQ',bid:2244.30,point:0.1,digits:1,tv:0.10,spreadPt:5,
-   atrM15:3.35,atrD1:41.8,atrPct:22,adx:13,slope:-0.08,ret1d:-0.17},
-  {id:'EURUSD',klass:'FX',cluster:'USD',bid:1.08412,point:0.00001,digits:5,tv:1.00,spreadPt:9,
-   atrM15:0.00058,atrD1:0.0071,atrPct:41,adx:17,slope:-0.12,ret1d:-0.22}
+  {id:'XAUUSD',klass:'Metal',cluster:'METALS',bid:4087.20,point:0.01,digits:2,tv:1.00,spreadPt:14,
+   atrM15:3.85,atrD1:48.6,atrPct:58,adx:26,slope:0.22,ret1d:0.48},
+  {id:'NAS100',klass:'Index',cluster:'US_EQ',bid:29850.5,point:0.1,digits:1,tv:0.10,spreadPt:12,
+   atrM15:42.0,atrD1:380,atrPct:62,adx:29,slope:0.48,ret1d:1.15},
+  {id:'US30',klass:'Index',cluster:'US_EQ',bid:54090.0,point:0.1,digits:1,tv:0.10,spreadPt:25,
+   atrM15:55.0,atrD1:520,atrPct:55,adx:27,slope:0.31,ret1d:1.71},
+  {id:'SPX500',klass:'Index',cluster:'US_EQ',bid:7736.50,point:0.1,digits:2,tv:0.10,spreadPt:5,
+   atrM15:8.20,atrD1:78.0,atrPct:60,adx:28,slope:0.41,ret1d:1.79},
+  {id:'US2000',klass:'Index',cluster:'US_EQ',bid:3037.00,point:0.1,digits:1,tv:0.10,spreadPt:6,
+   atrM15:6.80,atrD1:52.0,atrPct:48,adx:22,slope:0.18,ret1d:1.85},
+  {id:'EURUSD',klass:'FX',cluster:'USD',bid:1.15320,point:0.00001,digits:5,tv:1.00,spreadPt:8,
+   atrM15:0.00062,atrD1:0.0075,atrPct:38,adx:16,slope:0.08,ret1d:0.18}
 ];
 
 /* --- บริษัท + งบ 4 ไตรมาส --------------------------------------
@@ -42,21 +42,21 @@ const TRADABLES = [
    หน่วย: ล้านดอลลาร์
 ------------------------------------------------------------- */
 const COMPANIES = [
-  {id:'AAPL',name:'Apple',sector:'TECH',px:224.30,shares:15200,advUsdM:11800,
+  {id:'AAPL',name:'Apple',sector:'TECH',px:309.40,shares:15200,advUsdM:11800,
    debt:104600,cash:61800,equity:66900,assets:352600,pe5:[21,34],dilPct:-2.6,
    earnInDays:23,surprisePct:2.8,divYieldPct:0.44,foreignRevPct:58,
    q:[{rev:94800,ebit:28914,ni:24458,ocf:28371,capex:2749},
       {rev:93250,ebit:28353,ni:23984,ocf:27821,capex:2704},
       {rev:91800,ebit:27882,ni:23684,ocf:27473,capex:2662},
       {rev:90400,ebit:27672,ni:23303,ocf:27032,capex:2622}]},
-  {id:'MSFT',name:'Microsoft',sector:'TECH',px:428.60,shares:7430,advUsdM:9200,
+  {id:'MSFT',name:'Microsoft',sector:'TECH',px:485.20,shares:7430,advUsdM:9200,
    debt:97800,cash:75500,equity:268500,assets:512200,pe5:[24,38],dilPct:0.2,
    earnInDays:31,surprisePct:4.1,divYieldPct:0.72,foreignRevPct:50,
    q:[{rev:64700,ebit:28856,ni:22969,ocf:28481,capex:13587},
       {rev:62400,ebit:27830,ni:22152,ocf:27468,capex:13104},
       {rev:60100,ebit:26804,ni:21335,ocf:22455,capex:12621},
       {rev:58000,ebit:25868,ni:20590,ocf:21673,capex:12180}]},
-  {id:'NVDA',name:'Nvidia',sector:'TECH',px:118.40,shares:24500,advUsdM:38000,
+  {id:'NVDA',name:'Nvidia',sector:'TECH',px:214.50,shares:24500,advUsdM:38000,
    debt:9700,cash:34800,equity:58200,assets:85200,pe5:[28,92],dilPct:0.9,
    earnInDays:9,surprisePct:6.2,divYieldPct:0.02,foreignRevPct:56,
    q:[{rev:30040,ebit:18655,ni:16612,ocf:16280,capex:721},
